@@ -1,18 +1,23 @@
-<h1>Summaries</h1>
+<h2>My Summaries</h2>
 <div class="container">
   <div class="row">
-  	<% @user.summaries.each do |summary| %>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-		<div class="panel-heading">
-            <h3> <%= @user.post_title %> </h3>
-         </div>
-
-          <div class="panel-body">
-            <p> <%= @user.summary_entry %> </p>
+  	<% @summaries.sort_by{|t| - t.created_at.to_i}.each do |summary| %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+		      <div class="panel-heading">
+            <h3> <%= summary.post_title %></h3>
           </div>
+          <div class="panel-body">
+            <p> <%= summary.summary_entry[0..250] %> </p>
+
+            <p>... <%= link_to '[READ MORE]', summary %> </p>
+          </div>
+        </div>
        </div>
-    </div>
     <% end %>
   </div>
 </div>
+
+
+
+

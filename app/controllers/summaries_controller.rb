@@ -5,6 +5,7 @@ class SummariesController < ApplicationController
   # GET /summaries.json
   def index
     @summaries = Summary.all
+    @summary = Summary.new
   end
 
   # GET /summaries/1

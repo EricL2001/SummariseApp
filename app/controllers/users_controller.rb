@@ -2,13 +2,15 @@
 before_action :set_user, only: [:show]
   
   def index
-  @users = User.all   	
+  @users = User.all 
+  @summaries = Summary.all  	
   end
 
   def show
   	@summaries = Summary.all
     @books = Book.all
     @goals = Goal.all 
+    @summary = Summary.new
   end
   
 
